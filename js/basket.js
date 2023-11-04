@@ -47,12 +47,7 @@ let cart = {
             if (find) {
                 find.quantity++
             } else {
-                newProduct = {
-                    id_product: prodId,
-                    price: +product.price,
-                    product_name: product.product_name,
-                    quantity: 1
-                }
+                let product = Object.assign({}, element, {quantity: 1}) // создать новый объект, а не сделать ссылку на существующий
                 this.basket.push(newProduct)
             }
         },
